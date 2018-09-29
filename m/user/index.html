@@ -58,7 +58,7 @@
 <script>
 //    检测用户是否登陆
     $.ajax({
-        url: 'http://localhost:3000/user/queryUserMessage',
+        url: '/api/user/queryUserMessage',
         type: 'get',
         success: function (info) {
             console.log(info)
@@ -67,6 +67,12 @@
             }
         }
     })
+//$.ajax({
+//    url: '/api',
+//    success: function (ingo) {
+//        console.log(ingo)
+//    }
+//})
 
 </script>
 </body>
