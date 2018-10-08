@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--引入文件-->
+    <script src="./template-web.js"></script>
+</head>
+<body>
+<table border="1" width="300">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+</thead>
+    <!--定义标签-->
+<tbody id="tb">
+
+</tbody>
+</table>
+<script type="text/template" id="t">
+    {{each list as value}}
+    <tr>
+        <td>{{value.hero}}</td>
+        <td>{{value.age}}</td>
+    </tr>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    var arr = [
+        {"hero":"黄继光", "age":25},
+        {"hero":"邱少云", "age":20},
+        {"hero":"董存","age":18},
+    ];
+//    将arr包装成json
+    var obj = {"list": arr}
+//    调用template函数，将数据和模板揉到一起
+    var str = template('t', obj);
+//    将解析好的字符串填入tbody
+    document.getElementById('tb').innerHTML = str;
+    
+</script>
+</body>
+</html>
